@@ -1,0 +1,10 @@
+[
+  { "title": "Development", "id": 1, "icon": "fa-solid fa-code", "value": 5 },
+  { "title": "Web Designing", "id": 2, "icon": "fa-solid fa-window-restore", "value": 7 },
+  { "title": "Lifestyle", "id": 3, "icon": "fa-solid fa-leaf", "value": 3 },
+  { "title": "Health & Fitness", "id": 4, "icon": "fa-solid fa-heart-pulse", "value": 9 },
+  { "title": "IT & Software", "id": 5, "icon": "fa-solid fa-laptop", "value": 1 },
+  { "title": "Photography", "id": 6, "icon": "fa-solid fa-camera", "value": 8 },
+  { "title": "Finance & Accounting", "id": 7, "icon": "fa-solid fa-stamp", "value": 4 },
+  { "title": "Medical", "id": 8, "icon": "fa-solid fa-briefcase", "value": 2 }
+]
