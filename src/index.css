@@ -4,6 +4,7 @@
 
 
 .bg-banner{
+    background-color: white;
     background-image: url("/src/assets/banner-1.png");
     background-repeat: no-repeat;
     background-position: bottom center;

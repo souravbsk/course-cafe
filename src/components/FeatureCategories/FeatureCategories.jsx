@@ -4,7 +4,6 @@ import CategoryItem from "../CategoryItem/CategoryItem";
 
 const FeatureCategories = () => {
     const [Categories,setCategories] = FetchCategoryData();
-    console.log(Categories);
   return (
     <section className="container py-16">
       <div className="text-center max-w-full w-7/12 mx-auto space-y-3">
