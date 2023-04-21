@@ -6,6 +6,7 @@ import FeatureCategories from '../FeatureCategories/FeatureCategories';
 import Reviews from '../Reviews/Reviews';
 import Courses from '../Courses/Courses';
 import { useLoaderData } from 'react-router-dom';
+import HomeBlogs from '../HomeBlogs/HomeBlogs';
 
 const Home = () => {
     const courses = useLoaderData();
@@ -17,6 +18,7 @@ const Home = () => {
             <FeatureCategories></FeatureCategories>
             <InstructorsAvailable></InstructorsAvailable>
             <Reviews></Reviews>
+            <HomeBlogs></HomeBlogs>
         </div>
     );
 };

@@ -6,7 +6,7 @@ const InstructorsAvailable = () => {
   return (
     <div className="container">
       <IntructorLeft></IntructorLeft>
-      <div className="flex items-stretch gap-16">
+      <div className="flex pb-16 items-stretch gap-16">
         <div className="flex-1">
           <img className="w-full" src={InstructorImgRight} alt="" />
         </div>
