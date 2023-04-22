@@ -11,9 +11,9 @@ import imgNine from '../../assets/sponserd/lg-9.png';
 
 const TrustedBy = () => {
   return (
-    <div className="container py-16">
-      <div className="text-center max-w-full w-7/12 mx-auto space-y-3">
-        <h2 className="text-3xl text-gray-700 font-bold">
+    <div className="container py-8 md:py-16">
+      <div className="text-center max-w-full md:w-7/12 mx-auto space-y-3">
+        <h2 className="text-xl md:text-3xl text-gray-700 font-bold">
         Trusted By <span className="text-gray-600">+25,000</span>
         </h2>
         <p className="text-base text-gray-600">

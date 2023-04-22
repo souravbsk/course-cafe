@@ -4,15 +4,15 @@ const Footer = () => {
   return (
     <footer className="bg-gray-800 dark:bg-gray-900">
       <footer className="container">
-        <div className="mx-auto w-full max-w-screen-xl p-4 lg:py-8">
-          <div className="py-16">
-            <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-5">
+        <div className="mx-auto w-full max-w-screen-xl md:p-4 lg:py-8">
+          <div className="py-8 md:py-16">
+            <div className="grid grid-cols-2 gap-4 md:gap-6 sm:grid-cols-5">
               <div className="mb-6 space-y-3 col-span-2 md:col-span-2 md:mb-0">
                 <div>
                   <a href="https://flowbite.com/" className="flex items-center">
                     
                     <span className="self-center text-white text-3xl font-semibold whitespace-nowrap dark:text-white">
-                    Course-Cage
+                    Course-cafe
                     </span>
                   </a>
                 </div>
@@ -201,7 +201,7 @@ const Footer = () => {
               </div>
             </div>
           </div>
-          <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+          <hr className="my-3 md:my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
           <div className="sm:flex sm:items-center sm:justify-between">
             <span className="text-sm text-gray-500 sm:text-center dark:text-gray-400">
               © 2023

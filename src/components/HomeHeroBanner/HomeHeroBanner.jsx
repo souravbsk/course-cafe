@@ -4,12 +4,12 @@ import { FcSearch } from "react-icons/fc";
 const HomeHeroBanner = () => {
   return (
     <div className="bg-banner">
-      <div className="max-w-full w-8/12 px-4 flex justify-center items-center h-[80vh] mx-auto">
-        <div className="text-center space-y-6">
+      <div className="max-w-full md:w-8/12 px-4 py-28 md:py-0 flex justify-center items-center md:h-[80vh] mx-auto">
+        <div className="text-center space-y-3 md:space-y-6">
           <span className="px-4 text-sm rounded-md py-1 bg-slate-600 text-white">
             LISTEN TO OUR NEW ANTHEM
           </span>
-          <h1 className="text-5xl font-semibold text-slate-700">
+          <h1 className="text-xl md:text-5xl font-semibold text-slate-700">
             Crack UPSC CSE - GS with World's largest learning platform
           </h1>
           <p>
@@ -18,7 +18,7 @@ const HomeHeroBanner = () => {
             ad minim veniam, quis nostrud exercitation.
           </p>
           <form className="flex items-center justify-center">
-            <div className="w-2/5 border rounded-md relative">
+            <div className="md:w-2/5 border rounded-md relative">
               <input className="border-none w-full" type="text" />
               <FcSearch className="absolute top-4 left-3"></FcSearch>
             </div>

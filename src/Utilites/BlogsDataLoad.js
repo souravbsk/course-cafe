@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 const BlogsDataLoad = () => {
     const [blogs,setBlogs] = useState([]);
     useEffect(() => {
-        fetch("./blogs.json")
+        fetch("/blogs.json")
         .then(res => res.json())
         .then(data => setBlogs(data))
     },[])

@@ -6,9 +6,9 @@ import Blog from '../Blog/Blog';
 const HomeBlogs = () => {
     const [blogs, setBlogs] = useContext(BlogsLoadData);
     return (
-        <div className="container py-16">
-      <div className="text-center max-w-full w-7/12 mx-auto space-y-3">
-        <h2 className="text-3xl text-gray-700 font-bold">
+        <div className="container py-8 md:py-16">
+      <div className="text-center max-w-full md:w-7/12 mx-auto space-y-3">
+        <h2 className="text-xl md:text-3xl text-gray-700 font-bold">
         Latest News & <span className="text-gray-600">Articles</span>
         </h2>
         <p className="text-base text-gray-600">

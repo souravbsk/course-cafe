@@ -5,7 +5,6 @@ import TabDetails from "../TabDetails/TabDetails";
 
 const CourseDetails = () => {
   const course = useLoaderData();
-  console.log(course);
 
   const {
     id,
@@ -22,13 +21,26 @@ const CourseDetails = () => {
     description,
   } = course;
   return (
-    <div className="py-36 bg-gray-100">
-      <div className="container grid md:grid-cols-3 gap-8">
+    <div className="bg-gray-100">
+      <div
+        style={{ backgroundImage: `url(${courseImg})` }}
+        className="h-64 bg-no-repeat opacity-75 mt-16 bg-cover w-full"
+      >
+        <div className="container h-64 flex items-center py-8">
+          <div>
+            <span className="bg-gray-100 text-gray-800 text-xs font-medium mr-2 px-3.5 py-1 rounded-full dark:bg-gray-700 dark:text-gray-300">
+              {courseCategory}
+            </span>
+            <h1 className="text-2xl  mt-4 bg-gray-800 py-2 px-3 rounded-2xl font-semibold text-white">{courseTitle}</h1>
+          </div>
+        </div>
+      </div>
+      <div className="container pt-20 pb-12 grid md:grid-cols-3 gap-8">
         <div className="md:col-span-2">
           <TabDetails course={course}></TabDetails>
         </div>
         <div className="">
-          <div className="rounded-md bg-white">
+          <div className="rounded-md  bg-white">
             <figure>
               <img className="w-full rounded h-48" src={courseImg} alt="" />
             </figure>
@@ -108,7 +120,9 @@ const CourseDetails = () => {
                 </li>
               </ul>
               <div className="mt-8">
-                <button className="w-full py-3 bg-gray-700 hover:bg-gray-500 duration-300 text-white font-semibold rounded-md">Start Now</button>
+                <button className="w-full py-3 bg-gray-700 hover:bg-gray-500 duration-300 text-white font-semibold rounded-md">
+                  Start Now
+                </button>
               </div>
             </div>
           </div>

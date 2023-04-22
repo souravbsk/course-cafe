@@ -2,8 +2,8 @@ import React from "react";
 
 const CallToAction = () => {
   return (
-    <div className="bg-gray-400 mt-9">
-      <div className="container flex justify-between items-center py-10">
+    <div className="bg-gray-400">
+      <div className="container flex flex-col md:flex-row gap-6 justify-between md:items-center py-10">
         <div>
           <h3 className="text-2xl font-semibold text-white">
             Do You Have Questions ?

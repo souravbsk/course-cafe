@@ -1,6 +1,7 @@
 import moment from "moment/moment";
 import React from "react";
 import { FaClock } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Blog = ({ blog }) => {
   const { id, title, category, paragraph, date, authorImage, blogImage } = blog;
@@ -14,11 +15,11 @@ const Blog = ({ blog }) => {
           <span className="bg-gray-200 py-0.5 px-3 rounded-md font-medium text-gray-600">
             {category}
           </span>
-          <a href="#">
+          <Link to={`/blog/${id}`} href="#">
             <h5 className="my-2 text-xl font-bold tracking-tight text-gray-900 dark:text-white">
               {title}
             </h5>
-          </a>
+          </Link>
           <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">
             {paragraph.slice(0, 80) + "..."}
           </p>

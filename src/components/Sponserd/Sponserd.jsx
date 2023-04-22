@@ -6,8 +6,8 @@ import imgFour from '../../assets/sponserd/lg-7.png'
 
 const Sponserd = () => {
   return (
-    <div className="container -mt-14 shadow-md grid  lg:grid-cols-5 md:grid-cols-3 sm:grid-col-1 gap-3 bg-white rounded-md py-5 px-8">
-      <div>
+    <div className="container -mt-14 shadow-md grid grid-cols-5 gap-3 bg-white rounded-md py-5 px-8">
+      <div className="col-span-5 md:col-span-1">
         <h3 className="text-xl font-semibold text-right">Over 700+ Cources In One Place</h3>
       </div>
       <div>

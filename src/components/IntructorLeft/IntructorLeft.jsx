@@ -4,9 +4,9 @@ import InstructorImgLeft from "../../assets/media/lmp-2.png";
 class IntructorLeft extends Component {
   render() {
     return (
-      <div className="flex flex-col md:flex-row py-16 items-stretch gap-16">
+      <div className="flex flex-col-reverse md:flex-row py-8 md:py-16 items-stretch gap-8 md:gap-16">
         <div className="flex-1 space-y-4">
-          <h3 className="text-3xl font-semibold text-slate-800">
+          <h3 className="text-xl md:text-3xl font-semibold text-slate-800">
             We Have The Best Instructors Available in The City
           </h3>
           <p>

@@ -6,9 +6,9 @@ import { Link } from "react-router-dom";
 const FeatureCategories = () => {
   const [Categories, setCategories] = FetchCategoryData();
   return (
-    <section className="container py-16">
-      <div className="text-center max-w-full w-7/12 mx-auto space-y-3">
-        <h2 className="text-3xl text-gray-700 font-bold">
+    <section className="container py-8 md:py-16">
+      <div className="text-center max-w-full md:w-7/12 mx-auto space-y-3">
+        <h2 className="text-xl md:text-3xl text-gray-700 font-bold">
           Explore Featured <span className="text-gray-600">Categories</span>
         </h2>
 

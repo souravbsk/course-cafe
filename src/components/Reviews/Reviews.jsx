@@ -9,9 +9,9 @@ const Reviews = () => {
         .then(data => setReviews(data))
     },[])
   return (
-    <div className="container py-16">
-      <div className="text-center max-w-full w-7/12 mx-auto space-y-3">
-        <h2 className="text-3xl text-gray-700 font-bold">
+    <div className="container py-8 md:py-16">
+      <div className="text-center max-w-full md:w-7/12 mx-auto space-y-3">
+        <h2 className="text-xl md:text-3xl text-gray-700 font-bold">
         Our Students <span className="text-gray-600">Reviews</span>
         </h2>
         <p className="text-base text-gray-600">
@@ -20,7 +20,7 @@ const Reviews = () => {
           minim veniam.
         </p>
       </div>
-      <div className="grid grid-cols-3 mt-8 gap-8
+      <div className="grid md:grid-cols-3 mt-8 gap-8
       ">
       {
         reviews?.map(review => <Review review={review} key={review.id}></Review>)
