@@ -1,11 +1,10 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 const Register = () => {
-
-    const {createUser,displayName} = useContext(AuthContext);
-
+  const { createUser, displayName } = useContext(AuthContext);
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -19,27 +18,32 @@ const Register = () => {
     const fullName = first_name + " " + last_name;
     const phone = form.phone.value;
 
-
-
-createUser(email,password)
-.then(result => {
-    const currentUser = result.user;
-    currentUser['phoneNumber'] = phone;
-    displayName(result.user,fullName)
-    console.log(currentUser);
-})
-
-
-
-
-
+    createUser(email, password).then((result) => {
+      const currentUser = result.user;
+      currentUser["phoneNumber"] = phone;
+      displayName(result.user, fullName,phone)
+      .then(()=>{
+        console.log('object');
+      })
+      .catch(err => {
+        console.log(err.message);
+      })
+      console.log(currentUser);
+    })
+    .catch(err => {
+      console.log(err.message);
+    })
   };
   return (
     <div className="container py-16 mt-20">
+      
       <form
         onSubmit={handleSignUp}
         className="md:w-6/12 border-2 p-8 rounded-md mx-auto"
       >
+        <h1 className="text-xl text-center font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">
+              Register
+            </h1>
         <div className="relative z-0 w-full mb-6 group">
           <input
             type="email"
@@ -142,10 +146,18 @@ createUser(email,password)
         </div>
         <button
           type="submit"
-          className="text-white bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          className="text-white w-full bg-gray-700 hover:bg-gray-800 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm  px-5 py-2.5 text-center dark:bg-gray-600 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
         >
-          Submit
+          Register
         </button>
+        <p className="text-sm mt-5 text-center font-light text-gray-500 dark:text-gray-400">
+          Already have an account? <Link
+            to="/login"
+            className="font-medium text-primary-600 hover:underline dark:text-primary-500"
+          >
+             Sign In
+          </Link>
+        </p>
       </form>
     </div>
   );

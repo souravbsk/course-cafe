@@ -6,6 +6,8 @@ import CallToAction from "../CallToAction/CallToAction";
 import BlogsDataLoad from "../../Utilites/BlogsDataLoad";
 import Loader from "../Loader/Loader";
 import { ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export const BlogsLoadData = createContext('blogs');
 const Main = () => {

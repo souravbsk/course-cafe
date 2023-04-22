@@ -5,9 +5,12 @@ import { FaUserCircle } from "react-icons/fa";
 
 const Header = () => {
   const [showNav, setShowNav] = useState(false);
-  const { user } = useContext(AuthContext);
+  const { user,logOut } = useContext(AuthContext);
 
-  console.log(showNav);
+
+  const handleLogOut = () => {
+    logOut()
+  }
   return (
     <header className="">
       <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600">
@@ -21,12 +24,12 @@ const Header = () => {
           </a>
           <div className="flex md:order-2">
             {user ? (
-             <button className="bg-slate-600 flex items-center gap-2 text-white font-semibold px-6 py-2 rounded-md">
+             <button onClick={handleLogOut} className="bg-slate-600 flex items-center gap-2 text-white font-semibold px-6 py-2 rounded-md">
              Log out
              
            </button>
             ) : (
-              <Link>
+              <Link to="/login">
                 <button className="bg-slate-600 text-white font-semibold px-6 py-2 rounded-md">
                   Sign in
                 </button>
