@@ -122,7 +122,7 @@ const AllCourses = () => {
               <div>
                 <div className="flex items-center gap-2">
                   <label
-                    htmlhtmlFor="large"
+                    htmlhtmlhtmlFor="large"
                     className="block text-base font-normal text-gray-600 dark:text-white"
                   >
                     Short By:

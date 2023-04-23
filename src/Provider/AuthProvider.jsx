@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signOut, updateCurrentUser, updatePhoneNumber, updateProfile } from "firebase/auth";
+import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, sendEmailVerification, sendPasswordResetEmail, signInWithEmailAndPassword, signInWithPopup, signOut, updateCurrentUser, updatePhoneNumber, updateProfile } from "firebase/auth";
 import app from '../firebase/firebase.init';
 
 export const AuthContext = createContext(null);
@@ -8,6 +8,9 @@ const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
+    const googleProvider = new GoogleAuthProvider();
+    const githubProvider = new GithubAuthProvider();
+    const facebookProvider = new FacebookAuthProvider();
 
     //create user
     const createUser = (email,password) => {
@@ -45,14 +48,35 @@ return sendPasswordResetEmail(auth,email);
 
 }
 
+//google sign in
+const googleSignIn = () => {
+return signInWithPopup(auth,googleProvider);
+}
+
+// git hub sign in
+const githubSignIn = () => {
+    return signInWithPopup(auth,githubProvider);
+}
+
+// facebook sign in
+
+const facebookSignIn = () => {
+    return signInWithPopup(auth,facebookProvider)
+}
+
     const authInfo = {
         user,
         createUser,
         loginUser,
         displayName,
         logOut,
-        lostPass
+        lostPass,
+        googleSignIn,
+        githubSignIn,
+        facebookSignIn
+        
     }
+    console.log(user);
     return (
         <AuthContext.Provider value={authInfo}>
             {children}
