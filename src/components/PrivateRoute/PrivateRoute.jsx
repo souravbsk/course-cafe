@@ -4,11 +4,10 @@ import { Navigate, useLocation } from 'react-router-dom';
 import Loader from '../Loader/Loader';
 
 const PrivateRoute = ({children}) => {
-    console.log(children);
     const {user,loader} = useContext(AuthContext);
-    console.log(user);
 
     const location = useLocation();
+    console.log(location);
     if(loader){
         return <Loader></Loader>
     }
@@ -18,7 +17,7 @@ const PrivateRoute = ({children}) => {
     }
 
 
-    return  <Navigate to='/login' replace></Navigate>;
+    return  <Navigate to='/login' state={{from:location}} replace></Navigate>;
 
 };
 

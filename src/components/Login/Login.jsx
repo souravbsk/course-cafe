@@ -1,12 +1,17 @@
 import React, { useContext, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
 import SocialMediaLogin from "../SocialMediaLogin/SocialMediaLogin";
 
 const Login = () => {
-  const { loginUser,lostPass } = useContext(AuthContext);
+  const { loginUser, lostPass } = useContext(AuthContext);
   const userEmail = useRef(null);
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const fromLocation = location?.state?.from?.pathname || "/";
+
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -16,6 +21,8 @@ const Login = () => {
     loginUser(email, password)
       .then((result) => {
         const currentUser = result.user;
+        navigate(fromLocation, { replace: true });
+
         console.log(currentUser);
       })
       .catch((err) => {
@@ -25,19 +32,18 @@ const Login = () => {
 
   const handleLostPassword = () => {
     const email = userEmail.current.value;
-    if(!email){
-        toast('please enter your email')
-        return
+    if (!email) {
+      toast("please enter your email");
+      return;
     }
     lostPass(email)
-    .then(() => {
-        toast('check your mail')
-    })
-    .catch(err => {
+      .then(() => {
+        toast("check your mail");
+      })
+      .catch((err) => {
         console.log(err.message);
-    })
-
-  }
+      });
+  };
 
   return (
     <section className="bg-gray-50 dark:bg-gray-900">
@@ -105,7 +111,11 @@ const Login = () => {
                     </label>
                   </div>
                 </div>
-                <button type="button" onClick={handleLostPassword} className="text-sm mt-5 md:mt-0 font-medium text-primary-600 hover:underline dark:text-primary-500">
+                <button
+                  type="button"
+                  onClick={handleLostPassword}
+                  className="text-sm mt-5 md:mt-0 font-medium text-primary-600 hover:underline dark:text-primary-500"
+                >
                   Forgot password?
                 </button>
               </div>

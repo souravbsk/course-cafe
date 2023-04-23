@@ -1,11 +1,17 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import { toast } from "react-toastify";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialMediaLogin from "../SocialMediaLogin/SocialMediaLogin";
 
 const Register = () => {
   const { createUser, displayName } = useContext(AuthContext);
+
+
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const fromLocation = location?.state?.from?.pathname || "/";
 
   const handleSignUp = (e) => {
     e.preventDefault();
@@ -19,6 +25,13 @@ const Register = () => {
     const fullName = first_name + " " + last_name;
     const phone = form.phone.value;
 
+    if(password !== confirmPassword) {
+      toast.error('confirmed password not matched')
+      return;
+    }
+
+
+
     createUser(email, password)
       .then((result) => {
         const currentUser = result.user;
@@ -29,7 +42,7 @@ const Register = () => {
           .catch((err) => {
             toast.error(err.message);
           });
-        console.log(currentUser);
+          navigate(fromLocation,{replace:true})
       })
       .catch((err) => {
         toast.error(err.message);
