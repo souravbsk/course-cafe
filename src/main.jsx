@@ -16,6 +16,8 @@ import NotFound from "./components/NotFound/NotFound";
 import AuthProvider from "./Provider/AuthProvider";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
+import PrivateRoute from "./components/PrivateRoute/PrivateRoute";
+import ContactUs from "./components/ContactUs/ContactUs";
 
 const router = createBrowserRouter([
   {
@@ -38,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/course/:id",
-        element: <CourseDetails></CourseDetails>,
+        element: <PrivateRoute><CourseDetails></CourseDetails></PrivateRoute>,
         loader: courseDetailsLoad,
       },
       {
@@ -60,6 +62,10 @@ const router = createBrowserRouter([
       {
         path:"/signup",
         element: <Register></Register>
+      },
+      {
+        path:"/contact",
+        element:<ContactUs></ContactUs>
       },
       {
         path: "*",

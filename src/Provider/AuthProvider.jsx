@@ -8,6 +8,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({children}) => {
     const [user,setUser] = useState(null);
+    const [loader,setLoader] = useState(true)
     const googleProvider = new GoogleAuthProvider();
     const githubProvider = new GithubAuthProvider();
     const facebookProvider = new FacebookAuthProvider();
@@ -34,6 +35,7 @@ const AuthProvider = ({children}) => {
     useEffect(()=> {
         const unSubscribe = onAuthStateChanged(auth,currentUser => {
             setUser(currentUser)
+            setLoader(false)
         })
         return () => unSubscribe();
     },[])
@@ -73,7 +75,8 @@ const facebookSignIn = () => {
         lostPass,
         googleSignIn,
         githubSignIn,
-        facebookSignIn
+        facebookSignIn,
+        loader
         
     }
     console.log(user);
